@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Edit product</title>  
+</head>  
+<body>  
+    <h2>Edit product Information</h2>   
+    <form action = "/updatedetails" method="post">  
+    <table>
+	{% for row in rows %}
+		<tr><td> </td><td><input type="hidden" name="pid" value="{{row["pid"]}}" ></td></tr> 
+		<tr><td>Product Name</td><td><input type="text" name="name" value="{{row["pname"]}}" ></td></tr>  
+        <tr><td>Product description</td><td><input type="text" name="des" value="{{row["pdes"]}}" ></td></tr> 
+		<tr><td>Product Prise</td><td><input type="number" name="prise" value="{{row["Prise"]}}"></td></tr>
+		<tr><td>Product quantity</td><td><input type="number" name="quantity" value="{{row["quantity"]}}"></td></tr> 		
+        <tr><td>Product image</td><td><input type="file" name="path"></td></tr>  
+        <tr><td><input type="submit" value="Submit"></td></tr>
+	 {% endfor %}  
+    </table>  
+    </form>  
+</body>  
+<a href="/">Go back to home page</a>  
+</html>  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Edit</title>  
+</head>  
+<body>  
+  
+<h3>Edit product Information</h3>  
+<table border=5>  
+    <thead>  
+        <td>ID</td>  
+        <td>Name</td>  
+        <td>Product description</td>
+		<td>Product Prise</td>
+		<td>Product quantity</td>		
+        <td>Image path</td>  
+		<td>Edit</td>
+    </thead>  
+      
+    {% for row in rows %}  
+      
+        <tr>
+		<form action = "/updateproduct" method="post">		
+            <td>{{row["pid"]}}</td>  
+            <td>{{row["pname"]}}</td>  
+            <td>{{row["pdes"]}}</td> 
+			<td>{{row["Prise"]}}</td> 	
+			<td>{{row["quantity"]}}</td> 			
+            <td>{{row["pimg"]}}</td> 
+			<td>	<input type="hidden" id="custId" name="custId" value="{{row["pid"]}}">
+			<input type="submit" value="Edit product">	</td>
+		</form>			
+        </tr>  
+      
+    {% endfor %}  
+</table>  
+<br><br>  
+  
+<a href="/">Go back to home page</a>  
+  
+</body>  
+</html>  
